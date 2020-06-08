@@ -1,0 +1,11 @@
+/* Plugin styling */
+.imdbRatingPlugin {
+    background: #f5de50;
+	padding: 5px 1px;
+}
+/* Opacity change on hover */
+.imdbRatingPlugin:hover {
+    zoom: 1;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+  }

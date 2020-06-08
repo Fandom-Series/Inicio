@@ -1,0 +1,42 @@
+
+
+@keyframes moveBg {
+    0% {
+      background-position: 0% 30%;
+    }
+    100% {
+      background-position: 1000% 500%;
+    }
+  }
+  
+  
+  
+  .time {
+    color: #d99c3b;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .time span {
+    padding: 0 14px;
+    font-size: 0.8rem;
+  }
+  
+  .time span div {
+    font-size: 3rem;
+  }
+  
+  @media (max-width: 740px) {
+    .label {
+      font-size: 1.7rem;
+    }
+    .time span {
+      padding: 0 16px;
+      font-size: 0.6rem;
+    }
+    .time span div {
+      font-size: 2rem;
+    }
+  }
+  

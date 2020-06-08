@@ -1,0 +1,291 @@
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+<div id="app">
+
+    <html>
+        <head>
+        <title>Peliculas</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+			<link rel="stylesheet" href="assets/css/main.css" />
+    		<link rel="stylesheet" href="assets/css/slider.css" />
+    		<link rel="stylesheet" href="assets/css/fire.css" />
+                 
+		<link rel="stylesheet" href="loadin.css">
+           
+          
+        </head>
+        
+        
+        <body class="is-preload">
+		<div class="load"></div>
+		<div id="page-wrapper">
+      
+         
+            <!-- Header -->
+            <header id="header">
+                  <h1 id="logo"><a href="https://fandom-series.github.io/Inicio/">FANDOM SERIES</a></h1>
+                  <nav id="nav">
+                      <ul>
+                        <li><a href="https://fandom-series.github.io/Inicio/">Inicio</a></li>
+                        <li>
+                          <a href="#">Contenido</a>
+                          <ul>
+                            
+                            <li><a href="Peliculasm.html">Peliculas</a></li>
+                            <li><a href="Solicitud de series o peliculas.html">Peticiones</a></li>
+                            <li>	
+                            </li>
+                          </ul>
+                        </li>	
+                      </ul>
+                    </nav>
+             
+              </header><br>
+      
+          
+      
+      <!-- slider --> 
+          
+   
+      <!-- Fin de slider --> 
+      
+      
+      
+       <!-- bloques de series --> 
+      <!--   Contenido 1 -->
+		  <label>Buscador:</label>
+      <input type="text" v-model="search" placeholder="Encuentra tu Pelicula..."/>
+              
+        
+    <br>
+		  
+          <article class="Cards carPerf" v-for="post in filteredList">
+            <div class="CPoster"><a v-bind:href="post.link" target="_blank">
+              <img v-bind:src="post.img"/> </div>
+              <div class="CInfo noHidetho"><h2> {{ post.title }}</h2><span><b>{{ post.author }}</b></span></div>
+              <span class="Cborder"></span>
+            </a>
+          </div>
+        
+          </article>
+             <!--fin de contenido--> 
+            
+             
+          <footer> 
+            <div align="center" id="footer-post" style="color: white; display: block;" class="disable-select">
+              
+      <p> © 2019  Fandom-Series  <a href="DCMA.html">DCMA</a></p></div> 
+                 </footer>     
+            
+          <!-- Scripts -->
+            <script src="assets/js/jquery.min.js"></script>
+            <script src="assets/js/jquery.scrolly.min.js"></script>
+            <script src="assets/js/jquery.dropotron.min.js"></script>
+            <script src="assets/js/jquery.scrollex.min.js"></script>
+            <script src="assets/js/browser.min.js"></script>
+            <script src="assets/js/breakpoints.min.js"></script>
+            <script src="assets/js/util.js"></script>
+            <script src="assets/js/main.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+ <script type="text/javascript">
+	$(window).load(function() {
+		$(".load").fadeOut("slow");
+	});
+	</script>
+            <script src="assets/js/percent.js"></script>
+      
+        </body>
+      </html>
+
+
+
+    
+   
+<!--Inicio aqui-->
+<script>
+     class Post {
+  constructor(title, link, author, img) {
+    this.title = title;
+    this.link = link;
+    this.author = author;
+    this.img = img;
+   	  
+  }
+}
+const app = new Vue ({
+  el: '#app',
+  data: {
+    search: '',
+    postList : [
+	    new Post(
+'El caballero de la Navidad',
+'Theknightbeforechristmas.html',
+'2019',
+'https://image.tmdb.org/t/p/w600_and_h900_bestv2/ivymBQYzYqZoLhvgYg77gSzXKsA.jpg'
+
+),
+	    new Post(
+'Frozen2',
+'Frozen2.html',
+'2019',
+'https://image.tmdb.org/t/p/original/jnFCk7qGGWop2DgfnJXeKLZFuBq.jpg'
+),
+    new Post(
+        'Malefica', 
+        'Malefica.html', 
+        '2019', 
+        'https://image.tmdb.org/t/p/w600_and_h900_bestv2/eZOkXqHXWCKytd78TggAtJ0M3gU.jpg'
+      ),
+	     new Post(
+        'El irlandes', 
+        'irlandés.html', 
+        '2019', 
+        'https://image.tmdb.org/t/p/w220_and_h330_face/sNilmIAwBbH0DmBOWBS6gWvNDex.jpg'
+      ),
+	    
+	     new Post(
+        'Noelle', 
+        'Noelle.html', 
+        '2019', 
+        'https://image.tmdb.org/t/p/w220_and_h330_face/xX1r6CNO2iu7I6Cu66WOwyoWlH2.jpg'
+      ),
+	     new Post(
+        'The King', 
+        'TheKing.html', 
+        '2019', 
+        'https://image.tmdb.org/t/p/w600_and_h900_bestv2/8u0QBGUbZcBW59VEAdmeFl9g98N.jpg'
+      ),
+	     new Post(
+        'Let It Snow', 
+        'LetItSnow.html', 
+        '2019', 
+        'https://image.tmdb.org/t/p/original/rEVu3E1OhMPJeCAn9a6QLyVhZDj.jpg'
+      ),
+	     new Post(
+        'Klaus', 
+        'Klaus.html', 
+        '2019', 
+        'https://image.tmdb.org/t/p/w600_and_h900_bestv2/ncluIBATv5cdQBvuxdD5d8DrSKK.jpg'
+      ),
+      new Post(
+        'El Rey león', 
+        'El Rey león.html', 
+        '2019', 
+        'https://image.tmdb.org/t/p/w600_and_h900_bestv2/3A8ca8WOBacCRujSKJ2tCVKsieQ.jpg'
+      ),
+	    new Post(
+        'Joker', 
+        'Joker.html', 
+        '2019', 
+        'https://image.tmdb.org/t/p/original/v0eQLbzT6sWelfApuYsEkYpzufl.jpg'
+      ),
+new Post(
+'Avengers: End Game',
+'AvengersEndGame.html',
+'2019',
+'https://image.tmdb.org/t/p/w600_and_h900_bestv2/or06FN3Dka5tukK1e9sl16pB3iy.jpg'
+),
+new Post(
+'SpiderMan: Far from Home ',
+'SpidemanFFH.html',
+'2019',
+'https://image.tmdb.org/t/p/w600_and_h900_bestv2/lcq8dVxeeOqHvvgcte707K0KVx5.jpg'
+),
+	new Post(
+        'Gladiador', 
+        'Gladiador.html', 
+        '2019', 
+        'https://image.tmdb.org/t/p/w600_and_h900_bestv2/iEzmvwybdubElRG0MkqHNS5o92.jpg'
+      ),
+	    new Post(
+        'Abominable', 
+        'Abominable.html', 
+        '2019', 
+        'https://image.tmdb.org/t/p/w600_and_h900_bestv2/gp7d1OGYpBGyG5E6fr1fMi01bvK.jpg'
+      ),
+	    new Post(
+        'El jilguero', 
+        'Goldfinch.html', 
+        '2019', 
+        'https://image.tmdb.org/t/p/w600_and_h900_bestv2/ij1QcacsPGq0Cvc3l73YTCmNFjc.jpg'
+      ),
+	    new Post(
+'Rambo Last Blood',
+'RamboLast.html',
+'2019',
+'https://image.tmdb.org/t/p/w600_and_h900_bestv2/kTQ3J8oTTKofAVLYnds2cHUz9KO.jpg'
+),
+new Post(
+'Descendientes 3',
+'Descendientes3.html',
+'2019',
+'https://image.tmdb.org/t/p/original/iYlUNAvMczvXaDzbEaGIkvKivbg.jpg'
+),
+new Post(
+'Agente bajo fuego',
+'Agentebajofuego.html',
+'2019',
+'https://image.tmdb.org/t/p/original/7J7UImhjqVElPSseX8ZM0SB2Ep5.jpg'
+),
+new Post(
+'It',
+'It.html',
+'2019',
+'https://image.tmdb.org/t/p/w600_and_h900_bestv2/9oERKIVyTWpHNum3STVsAGD4ojz.jpg'
+),
+	    new Post(
+'Hacker',
+'Hacker.html',
+'2019',
+'https://image.tmdb.org/t/p/w220_and_h330_face/bsgs5bi0P0cHp5sdGfzoomMKYmK.jpg'
+),
+new Post(
+'MazeRuners',
+'MazeRuners.html',
+'2014',
+'https://image.tmdb.org/t/p/original/divTNaYLQGHSHZYRPddDQ74l0xE.jpg'
+),
+new Post(
+'Sinsajo1',
+'Sinsajo1.html',
+'2014',
+'https://image.tmdb.org/t/p/original/fxbptfH5VibUyjm0He3lujT6j6q.jpg'
+),	    
+new Post(
+'Sinsajo2',
+'Sinsajo2.html',
+'2015',
+'https://image.tmdb.org/t/p/original/xGgjSmIEWOnqnxkOA0YmZUym7E0.jpg'
+),
+	    new Post(
+'Cincuenta sombras de Grey',
+'50sombrasdeGrey.html',
+'2015',
+'https://image.tmdb.org/t/p/w600_and_h900_bestv2/mNZcZOIlTwDKd30xLnRR4p0ZELg.jpg'
+),
+new Post(
+'Avatar',
+'Avatar.html',
+'2009',
+'https://image.tmdb.org/t/p/original/tXmTHdrZgNsULqCbThK2Dt2X9Wt.jpg'
+),
+new Post(
+'Harry Potter and the Order of the Phoenix',
+'HarryPotter5.html',
+'2007',
+'https://image.tmdb.org/t/p/original/z5bL1z1ZOAKBkvbOhVQp6GfBv4u.jpg'
+),
+
+]
+  },
+   computed: {
+    filteredList() {
+      return this.postList.filter(post => {
+        return post.title.toLowerCase().includes(this.search.toLowerCase()) || post.author.toLowerCase().includes(this.search.toLowerCase())
+      })
+    }
+  }
+})
+</script>
+<!--Termino aqui-->
